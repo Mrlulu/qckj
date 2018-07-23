@@ -1,0 +1,154 @@
+@import "./vendor"
+
+a:focus,a:hover,a.active,a.v-link-active{ color:$main; }
+input.input:focus,.focus{
+    border-color: $main
+}
+.input,.btn,.border {
+    border-color: $back
+}
+foo={
+    main:$main,
+    sub:$sub,
+    gray:$gray,
+    blue:$blue,
+    red:$red,
+    yellow:$yellow,
+    green:$green
+}
+for key,$color in foo
+    $lightColor = _light($color)
+    // 文字颜色
+    .text-{key}
+        color:$color
+    a.text-{key}:hover
+        color:$color + 30%
+    .text-{key}-light
+        color:$lightColor
+    // 背景色
+    .bg-{key}
+        background-color:$color
+        color:#fff
+        &-light
+            background-color:$lightColor + 60%
+    // 边框色
+    .border-{key}
+        border-color:$color
+        &-light
+            border-color:$lightColor
+
+for key in foo
+    .btn.border-{key}
+    .btn.bg-{key}-light
+    a.text-{key}:link
+    a.text-{key}:visited
+        @extend .text-{key}
+
+    .btn.border-{key}-light
+    a.text-{key}-light:link
+    a.text-{key}-light:visited
+        @extend .text-{key}-light
+
+    // 按钮组
+    .border-{key} .btn.active
+        @extend .bg-{key}
+    .border-{key}-light .btn.active
+        @extend .bg-{key}
+
+    .border-{key} .btn,
+    .btn.bg-{key}{
+        @extend .border-{key}
+    }
+    .border-{key}-light .btn{
+        @extend .border-{key}-light
+    }
+    .btn.bg-{key}-light {
+        border-color:$lightColor + 60%
+    }
+    .btn.border-{key}:hover
+    // .btn.border-{key}:focus,
+    .btn.bg-{key}:hover, 
+    .btn.bg-{key}:focus {
+        color: #fff; 
+        border-color:foo[key] - 6%
+        background-color:@border-color
+    }
+    .btn.border-{key}-light:hover, 
+    .btn.border-{key}-light:focus, 
+    .btn.bg-{key}-light:hover, 
+    // .btn.bg-{key}-light:focus
+        color: foo[key]
+        // border-color: saturate(_light(@color), -30%); 
+        border-color: _light(@color) + 40% 
+        background-color: @border-color
+
+    // input.input.border-{key}:focus
+    //     border-color:$color - 20%
+
+fixColor = {
+    back : $back
+    dark : $dark
+    light : $light
+    white : $white
+    black : $black
+}
+for key,$color in fixColor
+    .text-{key}
+    a.text-{key}:link,
+    a.text-{key}:visited,
+    .btn.border-{key} 
+        color: $color
+    .bg-{key},
+    .border-{key} .btn.active 
+        background-color: $color
+    .border-{key},
+    .btn.bg-{key}
+        border-color: $color
+
+/*悬浮背景*/
+.btn.border-black:hover, 
+// .btn.border-black:focus, 
+.btn.bg-black:hover, 
+// .btn.bg-black:focus,
+.btn.border-dark:hover, 
+// .btn.border-dark:focus, 
+.btn.bg-dark:hover{ color: #fff; border-color: #666; background-color: #666; }
+
+
+.bg,
+.btn:hover, 
+// .btn:focus, 
+.btn.active,
+.btn.border-white:hover,
+.btn.bg-white:hover{
+    background-color: $bg;
+    border-color:$bg
+    color:$dark
+}
+.border-bg {
+    border-color:$bg
+}
+.btn.bg {
+    @extend .border-bg, .text-main
+}
+.btn.bg:hover{
+    border-color:$bg - 2%;
+    background-color: $bg - 2%;
+    color: $main
+}
+/*颜色重设*/
+
+.bg-inverse,
+.bg-inverse a {
+    color: #fff;
+}
+
+a.text-white:hover,
+.bg-inverse a:hover {
+    color: #ddd;
+}
+
+.bg-black, .bg-dark{
+    @extend .text-white
+}
+

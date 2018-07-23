@@ -1,0 +1,126 @@
+/*
+ *  项目自定义默认标准
+ */
+
+html {
+    font: 12px/1.2 "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body{
+    background-color: #fff;
+    color: #444;
+    font-size: 13px;
+    height: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ol, ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/* 去掉各Table  cell 的边距并让其边重合 */
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin:0;
+    font-weight: normal;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+img {
+    vertical-align:middle; 
+    max-width: 100%;
+}
+
+input:focus,textarea:focus,button:focus,select:focus{outline:none;}
+
+/* 不允许用户调整元素大小 */
+textarea {
+    resize: none;
+}
+
+h1,.h1 {
+    font-size: 40px;
+}
+
+h2,.h2 {
+    font-size: 34px;
+}
+
+h3,.h3 {
+    font-size: 24px;
+}
+
+h4,.h4 {
+    font-size: 20px;
+}
+
+h5,.h5 {
+    font-size: 16px;
+}
+
+h6,.h6 {
+    font-size: 14px;
+}
+.text-nor{
+  font-size: 12px;
+}
+.text-lg{
+    font-size: 18px
+}
+.text-xl{
+    font-size: 22px
+}
+.text-xxl{
+    font-size: 28px
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+    font-weight: normal;
+    line-height: 1;
+    color: #666;
+}
+h2 small,h3 small {
+    font-size: 14px;
+}
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+[v-cloak] {
+  display: none;
+}

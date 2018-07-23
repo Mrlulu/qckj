@@ -1,0 +1,21 @@
+/**
+ * @Description: base页面公共
+ */
+/*  初始化设置 */
+@import "./base/normalize.css";
+
+/* reset 项目标准重设 */
+@import "./base/reset.css";
+
+/* common 公共类设置 */
+@import "./base/pub.css";
+/*
+@import "./base/color.css";
+*/
+/* 项目共用组件样式 */
+@import "./base/widgets.css";
+
+
+/* @import "./iconfont/iconfont.css"; */
+@import "./base/animate.css";
+/* @import "font-awesome-4.6.3/css/font-awesome.min.css";*/

@@ -1,0 +1,215 @@
+@import "./vendor"
+
+// 主体版面
+.wrapper {
+  position: relative;
+  height: 100%;
+  padding-bottom:112px;
+  background-color: $back
+}
+.action-bar {
+  // position: absolute;
+  // top:-2px;
+  width:100%;
+  z-index:2;
+  height:48px;
+  box-shadow: 0 5px 5px rgba(0,0,0,.1)
+}
+.action-bar+.container {
+  padding-bottom:70px;
+}
+.content .action-bar+div{
+  height: calc(100% - 50px); 
+}
+.container {
+  padding: 20px 30px;
+  height: 100%;
+  background-clip: content-box;
+  background-color: #fff
+  overflow: auto;
+  .content {
+  overflow: auto;
+  height:100%;
+  background-color: #fff 
+  }
+}
+
+.menuRight {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  form {
+    overflow: auto;
+    //border-bottom: 1px solid #dce7eb;
+    margin: 0px 0px 27px 0;
+    padding: 38px 0px;
+    input[readonly]{
+          background: transparent;
+    }
+  }
+}
+.searchParam{
+      margin-bottom: 22px;
+      &:hover{
+        span{
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+}
+.sealed{
+  svg{
+    color:#FD5C00;
+    font-size: 20px;
+  }
+}
+
+.formDetail{
+  .el-form {
+    max-width:1100px
+    }
+}
+
+// element-ui 样式覆盖
+
+//表单输入框行高重整
+// .el-form-item__content,.el-form-item__label{
+//   line-height:40px !important
+// }
+ .el-form-item--small.el-form-item{
+   margin-bottom:22px
+  }
+.el-form-item__label {
+  color:$dark
+}
+.el-select input[readonly]{
+  background-color:#fff
+  color:inherit
+  }
+.el-select .el-input__inner {
+  cursor: default;
+  padding-right: 30px;
+}
+.el-date-editor .el-range-separator{
+  width:auto
+  }
+.el-date-editor .el-range__close-icon{
+  display: none
+}
+.el-input__inner{
+  padding-left:8px;
+  padding-right: 8px;
+  }
+.el-input--small {
+  // .el-input__inner {
+  //   line-height: 30px;
+  //   height: 30px;
+  // }
+  .el-autocomplete {
+    width: 100%;
+  }
+}
+//表单输入框等禁选状态文字颜色覆盖
+.el-input.is-disabled .el-input__inner{
+  color: #aaa;
+}
+//el-autocomplete组件下拉面板中的文字居中
+.el-autocomplete-suggestion li{
+  text-align:center;
+}
+
+// 对话框
+.el-dialog__body{
+  padding: 20px
+}
+.el-dialog__header {
+    background-color: $main;
+    text-align: left;
+    padding 15px 20px
+    font-size 16px
+    .el-dialog__title,.el-dialog__close,.el-dialog__close:hover{
+      color: white;
+    }
+  }
+.el-dialog__wrapper .el-table__body-wrapper{
+  max-height :500px;
+  overflow-y :auto;
+}
+
+
+// 表格样式调整
+.el-table--small,{
+  font-size:inherit;
+  }
+.el-table--small td, .el-table--small th {
+    padding: 15px 0;
+}
+.el-table{
+  color :$black
+}
+.el-table thead {
+  color:$dark
+}
+.tableList{
+  padding:20px;
+  thead{
+    th{
+        background-color :$back;
+    }
+  }
+  .el-pagination{
+    text-align:right;
+    margin-top:36px;
+    .el-pager li{
+      font-weight: normal;
+    }
+  }
+ 
+  .el-table .cell{
+        max-height: 50px;
+    overflow: hidden;
+  }
+}
+// 表格多余的线条隐藏
+ .el-table::before{
+   position: initial
+ }
+// 弹框x轴超出不滚动
+.el-table__body-wrapper{
+  overflow-x:hidden !important
+}
+
+// 超出滚动条滚动
+.public-scrollx-table .el-table__body-wrapper{
+  overflow-x: auto !important;
+}
+
+.el-tree {
+  background-color: inherit;
+}
+// tree节点hover样式重置
+.el-tree-node__content:hover{
+  background: rgba(225, 239, 240, 0.5) !important;
+}
+/*tree自定义样式*/
+.tree-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-right: 8px;
+}
+.block {
+  /* padding: 37px; */
+}
+.block .el-tree-node__content {
+  border-bottom: 1px solid #eee;
+  padding: 25px 0;
+}
+
+/* 暂无数据 */
+.no-data-style{
+  text-align: center;
+  color: $gray;
+}
