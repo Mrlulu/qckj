@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import login from './login'
+import APP from './login'
 // import '@/assets/css/index.styl'
 // import Icon from '@/components/base/VIcon'
 
@@ -7,5 +7,5 @@ import login from './login'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  render: h => h(login)
+  render: h => h(APP)
 })

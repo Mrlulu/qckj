@@ -1,6 +1,12 @@
-import Resource from './resource'
+import Http from './http'
 
-const create = Resource.create
-// create({url, methods, ver})
 // 用户模块
-export const userRes = create('bs/user', {})
+export const userRes = new Http('user', {
+  login (paramer) {
+    return this.get('login', paramer)
+  },
+  // 获取用户权限
+  getPermission (params) {
+    return this.get('permission', params)
+  }
+})
